@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery for Forms</title>
+        <link rel="stylesheet" type="text/css" href="contactCard.css">
+        <meta charset="utf-8" http-equiv="refresh" content="200">
+        <meta name="author" content="Wenmin Song">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript">
+              $(document).ready(function(){
+                $('form').submit(function(){
+                    $('#right').append(function(){
+                        var fullName = $('form #first_name').val() + " " + $('form #last_name').val();
+                        var descrip = $('form #description').val();
+                        return "<div class='name_card'><h2>"+ fullName +"</h2><span>Click for description!</span><p style='display:none;'>"+ descrip +"</p></div>";
+                    });
+                    $(this).children('input[type="text"]').val('');
+                    $(this).children('#description').val('Enter description here...');
+                    return false;
+                });
+                $(document).on('click', '#right .name_card', function(){
+                       if($(this).children('p').css('display')==='none'){
+                            $(this).children().hide();
+                            $(this).children('p').show();
+                       }else{
+                           //these two sentence cannot change order!!!
+                            $(this).children().show();
+                            $(this).children('p').hide();
+                       }
+                });
+              });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h2>Contact Card</h2>
+            </div>
+            <div id="middle">
+                <div id="left">
+                    <form>
+                        First name:<input type="text" id="first_name">
+                        Last name:<input type="text" id="last_name">
+                        Description:<textarea id="description" cols="30" rows="5">Enter description...</textarea>
+                        <input type="submit" value="Add User">
+                    </form>
+                </div>
+                <div id="right">
+                </div>
+            </div>
+            <div id="bottom">
+                <h5>Designed by Song</h5>
+                <h5>Email: wenmin0111@gmail.com</h5>
+            </div>
+        </div>
+    </body>
+</html>

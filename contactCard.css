@@ -1,0 +1,61 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: lightgray;
+    font-family: sans-serif;
+}
+#wrapper{
+    width: 700px;
+    height: 800px;
+    margin: auto;
+    /*padding: auto;*/
+    display: block;
+}
+#header, #bottom{
+    width: 700px;
+    height: 110px;
+    padding-top: 20px;
+    background-color:pink;
+    text-align: center;
+    /*display: block;*/
+    /*margin: auto;*/
+}
+#middle{
+    width: 700px;
+    height: 510px;
+    background-color: gray;
+    /*display: block;*/
+}
+#left{
+    width: 270px;
+    height: 495px;
+    background-color: transparent;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-top: 15px;
+    margin: 0px;
+    display: inline-block;
+}
+#left input{
+    /*display: block;*/
+    margin-right: 50px;
+    margin-bottom: 20px;
+    /*display: inline-block;*/
+}
+#right{
+    width: 365px;
+    height: 470px;
+    background-color: transparent;
+    float: right;
+    padding: 20px;
+    overflow: hidden;
+}
+#right .name_card{
+    width: 200px;
+    height: 110px;
+    margin-top: 20px;
+    margin-left: 120px;
+    background-color:pink;
+    text-align: center; 
+    overflow: hidden;
+}
